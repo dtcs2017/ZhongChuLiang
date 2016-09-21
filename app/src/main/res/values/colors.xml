@@ -14,4 +14,6 @@
     <!--按钮颜色-->
     <color name="blue">#41c378</color>
     <color name="blue_1">#2da861</color>
+
+    <color name="gray">#9A9A9A</color>
 </resources>

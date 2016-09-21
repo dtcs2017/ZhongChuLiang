@@ -1,6 +1,5 @@
 package com.zcl.hxqh.zhongchuliang.view.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +7,7 @@ import android.view.WindowManager;
 
 import com.zcl.hxqh.zhongchuliang.R;
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
