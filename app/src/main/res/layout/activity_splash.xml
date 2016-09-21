@@ -9,7 +9,7 @@
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/welcome" />
+        android:src="@drawable/loading_bj" />
 
 
 </RelativeLayout>

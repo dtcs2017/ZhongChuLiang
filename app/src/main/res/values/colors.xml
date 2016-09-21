@@ -6,4 +6,12 @@
 
     <!--窗体颜色 -->
     <color name="windows_color">#F5F5F5</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <!--黑色-->
+    <color name="black">#222222</color>
+
+    <!--按钮颜色-->
+    <color name="blue">#41c378</color>
+    <color name="blue_1">#2da861</color>
 </resources>

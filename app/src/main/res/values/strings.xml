@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+
+    <string name="prompt_user">请输入用户名</string>
+    <string name="prompt_password">请输入密码</string>
+    <string name="rember_password">记住账号</string>
 </resources>
