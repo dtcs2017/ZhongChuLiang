@@ -88,4 +88,29 @@
     <string name="title_activity_invbalance_detail">详情</string>
 
     <string name="input">提交</string>
+    <!--出库详情-->
+
+    <!--出库详情-->
+    <string name="workorder_wonum_title">编号:</string>
+    <string name="workorder_desction_title">描述:</string>
+    <string name="workorder_onbehalfof_title">领用人:</string>
+    <string name="workorder_status_title">状态:</string>
+    <string name="workorder_detail_title">出库详情</string>
+    <string name="invreserve_location_title">库房:</string>
+    <string name="withdrawing_text">退库</string>
+    <string name="issue_text">发放</string>
+    <string name="isfinish_title">已经生产编码 ?</string>
+    <string name="invbalances_pici_hint">请输入批次进行选择...</string>
+    <string name="matrectrans_fromlot_title">原批次:</string>
+    <string name="matrectrans_tolot_title">目标批次:</string>
+
+
+    <!--库存余量详情-->
+    <string name="title_activity_cinvbalances_detail">库存余量详情</string>
+    <string name="invbalances_binnum_title">货柜:</string>
+    <string name="invbalances_lotnum_title">批次:</string>
+    <string name="invbalances_curbal_title">当前余量:</string>
+    <string name="invbalances_invtype_title">库存类别:</string>
+    <string name="inbalance_itemnum_title">物资编号:</string>
+    <string name="cinvbalances_detail_title">余量详情</string>
 </resources>

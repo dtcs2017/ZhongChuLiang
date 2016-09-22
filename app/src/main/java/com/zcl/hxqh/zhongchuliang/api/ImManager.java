@@ -34,15 +34,15 @@ public class ImManager {
 
     }
 
-//    /**WPITEM**/
-//    public static String serInvreserveUrl(String wonum, String search, int curpage, int showcount) {
-//        if(search.equals("")){
-//            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum + "'}}";
-//        }else{
-//            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum +  "','ITEMNUM':'"+search+"'}}";
-//        }
-//
-//    }
+    /**出库管理**/
+    public static String serInvreserveUrl(String wonum, String search, int curpage, int showcount) {
+        if(search.equals("")){
+            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum + "'}}";
+        }else{
+            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum +  "','ITEMNUM':'"+search+"'}}";
+        }
+
+    }
 
 
 

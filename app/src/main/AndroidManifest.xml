@@ -60,6 +60,12 @@
         <activity
             android:name=".view.activity.PolineDetailActivity"
             android:label="PolineDetailActivity"></activity>
+        <activity
+            android:name=".view.activity.WorkOrderDetailsActivity"
+            android:label="WorkOrderDetailsActivity"></activity>
+        <activity
+            android:name=".view.activity.InvreserveDetailActivity"
+            android:label="InvreserveDetailActivity"></activity>
     </application>
 
 </manifest>

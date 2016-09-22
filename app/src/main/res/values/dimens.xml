@@ -11,4 +11,5 @@
     <dimen name="actionbar_dimen">56dp</dimen>
     <dimen name="dimen_40dp">40dp</dimen>
     <dimen name="dimens_16sp">16sp</dimen>
+    <dimen name="dimens_8dp">8dp</dimen>
 </resources>

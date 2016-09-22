@@ -11,8 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zcl.hxqh.zhongchuliang.R;
-import com.zcl.hxqh.zhongchuliang.model.WorkOrder;
-import com.zcl.hxqh.zhongchuliang.view.activity.WorkOrderDetailsActivity;
+import com.zcl.hxqh.zhongchuliang.model.Invreserve;
+import com.zcl.hxqh.zhongchuliang.view.activity.InvreserveDetailActivity;
 
 import java.util.ArrayList;
 
@@ -20,14 +20,15 @@ import java.util.ArrayList;
  * Created by apple on 15/6/4.
  * 出库管理
  */
-public class WorkOrderAdapter extends RecyclerView.Adapter<WorkOrderAdapter.ViewHolder> {
+public class InvreserveAdapter extends RecyclerView.Adapter<InvreserveAdapter.ViewHolder> {
 
-    private static final String TAG = "WorkOrderAdapter";
+    private static final String TAG = "InvreserveAdapter";
     Context mContext;
-    ArrayList<WorkOrder> workOrders = new ArrayList<WorkOrder>();
-
-    public WorkOrderAdapter(Context context) {
+    ArrayList<Invreserve> invreserves = new ArrayList<Invreserve>();
+    private String wonum;
+    public InvreserveAdapter(Context context, String wonum) {
         mContext = context;
+        this.wonum=wonum;
     }
 
     @Override
@@ -39,19 +40,20 @@ public class WorkOrderAdapter extends RecyclerView.Adapter<WorkOrderAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        final WorkOrder workOrder = workOrders.get(i);
+        final Invreserve invreserve = invreserves.get(i);
 
         viewHolder.itemNumTitle.setText(mContext.getString(R.string.item_num_title));
         viewHolder.itemDescTitle.setText(mContext.getString(R.string.item_desc_title));
-        viewHolder.itemNum.setText(workOrder.wonum);
-        viewHolder.itemDesc.setText(workOrder.description);
+        viewHolder.itemNum.setText(invreserve.itemnum);
+        viewHolder.itemDesc.setText(invreserve.description);
 
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, WorkOrderDetailsActivity.class);
+                Intent intent = new Intent(mContext, InvreserveDetailActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("workOrder", workOrder);
+                bundle.putSerializable("invreserve", invreserve);
+                bundle.putString("wonum", wonum);
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
@@ -62,16 +64,16 @@ public class WorkOrderAdapter extends RecyclerView.Adapter<WorkOrderAdapter.View
 
     @Override
     public int getItemCount() {
-        return workOrders.size();
+        return invreserves.size();
     }
 
-    public void update(ArrayList<WorkOrder> data, boolean merge) {
-        if (merge && workOrders.size() > 0) {
-            for (int i = 0; i < workOrders.size(); i++) {
-                WorkOrder obj = workOrders.get(i);
+    public void update(ArrayList<Invreserve> data, boolean merge) {
+        if (merge && invreserves.size() > 0) {
+            for (int i = 0; i < invreserves.size(); i++) {
+                Invreserve obj = invreserves.get(i);
                 boolean exist = false;
                 for (int j = 0; j < data.size(); j++) {
-                    if (data.get(j).wonum == obj.wonum) {
+                    if (data.get(j).itemnum == obj.itemnum) {
                         exist = true;
                         break;
                     }
@@ -80,16 +82,16 @@ public class WorkOrderAdapter extends RecyclerView.Adapter<WorkOrderAdapter.View
                 data.add(obj);
             }
         }
-        workOrders = data;
+        invreserves = data;
 
         notifyDataSetChanged();
     }
 
-    public void adddate(ArrayList<WorkOrder> data){
+    public void adddate(ArrayList<Invreserve> data){
         if(data.size()>0){
             for(int i = 0;i < data.size();i++){
-                if(!workOrders.contains(data.get(i))){
-                    workOrders.add(data.get(i));
+                if(!invreserves.contains(data.get(i))){
+                    invreserves.add(data.get(i));
                 }
             }
         }

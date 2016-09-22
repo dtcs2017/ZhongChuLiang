@@ -1,0 +1,268 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title_contains"
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_contains">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/inbalance_itemnum_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <TextView
+                    android:id="@+id/invreserve_itemnum_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:hint="@string/have_not_data"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/workorder_desction_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <TextView
+                    android:id="@+id/inbalance_desction_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:hint="@string/have_not_data"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/invbalances_curbal_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <EditText
+                    android:id="@+id/invreserve_qty_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:background="@drawable/edittext_login"
+                    android:hint="@string/have_not_data"
+                    android:inputType="number"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/invreserve_location_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <TextView
+                    android:id="@+id/invreserve_location_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5"
+                    android:hint="@string/have_not_data"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/invreserve_binnum_title"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/invbalances_binnum_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <EditText
+                    android:id="@+id/invreserve_binnum_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_toRightOf="@+id/invreserve_binnum_title"
+                    android:background="@drawable/edittext_login"
+                    android:hint="@string/have_not_data"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <ImageView
+                    android:id="@+id/invreserve_binnum_choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/item_more" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/invreserve_lotnum_title"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/invbalances_lotnum_title"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+                <TextView
+                    android:id="@+id/invreserve_lotnum_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/invreserve_lotnum_title"
+                    android:hint="@string/have_not_data"
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimens_16sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/num_linearlayout_id"
+                android:background="@drawable/line"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:layout_marginTop="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/invreserve_issue_btn_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/dimen_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_enable_green"
+                    android:text="@string/issue_text"
+
+                    android:textColor="@color/white" />
+
+
+                <Button
+                    android:id="@+id/invreserve_withdrawing_btn_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/dimen_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_enable_green"
+                    android:text="@string/withdrawing_text"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
