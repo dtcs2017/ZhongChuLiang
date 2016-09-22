@@ -56,4 +56,36 @@
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
     <string name="scanning_text">条码/二维码</string>
 
+    <!--入库详情-->
+    <string name="po_num_text">采购单:</string>
+    <string name="po_desc_text">描述:</string>
+    <string name="po_recorder_text">接收人:</string>
+    <string name="po_vendor_text">供应商:</string>
+    <string name="po_recorde_text">接收</string>
+    <string name="po_return_text">退货</string>
+
+
+    <string name="have_not_data">暂无数据</string>
+
+    <string name="material_receiving">物料接收</string>
+    <string name="input_all">全部提交</string>
+
+    <string name="submit_process_ing">正在提交</string>
+
+
+    <!--poline-->
+    <string name="poline_itemnum">项目:</string>
+    <string name="poline_polinenum">行号:</string>
+    <string name="poline_desc">描述:</string>
+    <string name="poline_recorde_num">接收数量:</string>
+    <string name="poline_return_num">退货数量:</string>
+    <string name="poline_orderqty">总数量:</string>
+    <string name="poline_orderunit">单位:</string>
+    <string name="poline_storeloc">仓库号:</string>
+    <string name="poline_binnum">库位号:</string>
+    <string name="lotnum_text">批次:</string>
+
+    <string name="title_activity_invbalance_detail">详情</string>
+
+    <string name="input">提交</string>
 </resources>

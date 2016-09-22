@@ -6,10 +6,12 @@ package com.zcl.hxqh.zhongchuliang.api.ig_json;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Inventory_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Locations_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Po_JsonHelper;
+import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Poline_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.WorkOrder_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.model.Inventory;
 import com.zcl.hxqh.zhongchuliang.model.Locations;
 import com.zcl.hxqh.zhongchuliang.model.Po;
+import com.zcl.hxqh.zhongchuliang.model.Poline;
 import com.zcl.hxqh.zhongchuliang.model.WorkOrder;
 
 import java.io.IOException;
@@ -41,12 +43,12 @@ public class Ig_Json_Model {
     public static ArrayList<Po> parsePoFromString(String input) throws IOException {
         return Po_JsonHelper.parseFromJsonList(input);
     }
-//    /**
-//     *入库管理物料单*
-//     */
-//    public static ArrayList<Poline> parsePolineFromString(String input) throws IOException {
-//        return Poline_JsonHelper.parseFromJsonList(input);
-//    }
+    /**
+     *入库管理物料单*
+     */
+    public static ArrayList<Poline> parsePolineFromString(String input) throws IOException {
+        return Poline_JsonHelper.parseFromJsonList(input);
+    }
 
 
     /**

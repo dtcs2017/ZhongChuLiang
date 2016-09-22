@@ -139,6 +139,7 @@ public class SearchActivity extends BaseActivity implements SwipeRefreshLayout.O
         }  else if (search_mark == LOCATION_MARK) {//库存转移
             locationsAdapter = new LocationsAdapter(SearchActivity.this, 0);
             mRecyclerView.setAdapter(locationsAdapter);
+            codeImage.setVisibility(View.VISIBLE);
         }
         mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
         mSwipeLayout.setColor(R.color.holo_blue_bright,

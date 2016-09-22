@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="48.0dip"
+    android:layout_height="50dip"
     android:background="@color/blue" >
 
 
@@ -28,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-        android:contentDescription="@string/app_name"
+        android:visibility="gone"
         android:src="@drawable/ic_search" />
 
 

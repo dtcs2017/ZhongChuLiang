@@ -31,5 +31,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.0'
     compile 'com.instagram:ig-json-parser-processor-prerelease:0.0.6.0'
     compile 'com.fasterxml.jackson.core:jackson-core:2.7.0-rc1'
+    compile files('libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar')
     compile files('libs/zxing.jar')
 }

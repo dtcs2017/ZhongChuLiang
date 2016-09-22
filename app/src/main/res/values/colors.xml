@@ -31,4 +31,6 @@
     <color name="viewfinder_mask">#60000000</color>
     <color name="result_view">#b0000000</color>
     <color name="possible_result_points">#c0ffff00</color>
+
+    <color name="light_black">#393d3f</color><!--浅黑色 -->
 </resources>

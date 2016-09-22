@@ -73,12 +73,12 @@ public class ImManager {
             return "{'appid':'" + Constants.RECEIPT_APPID + "','objectname':'" + Constants.PO_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'PONUM':'" + search + "'}}";
         }
     }
-//    /**
-//     * 设置入库物料管理*
-//     */
-//    public static String setPolineUrl(String ponum, int curpage, int showcount) {
-//        return "{'appid':'" + Constants.RECEIPT_APPID + "','objectname':'" + Constants.POLINE_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'PONUM':'" + ponum + "'}}";
-//    }
+    /**
+     * 设置入库物料管理*
+     */
+    public static String setPolineUrl(String ponum, int curpage, int showcount) {
+        return "{'appid':'" + Constants.RECEIPT_APPID + "','objectname':'" + Constants.POLINE_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'PONUM':'" + ponum + "'}}";
+    }
 //
 //    /**
 //     * 库存使用情况搜索接口*
