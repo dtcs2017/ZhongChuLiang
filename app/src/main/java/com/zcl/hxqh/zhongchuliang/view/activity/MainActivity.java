@@ -1,5 +1,6 @@
 package com.zcl.hxqh.zhongchuliang.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,7 +14,10 @@ import android.widget.Toast;
 
 import com.zcl.hxqh.zhongchuliang.AppManager;
 import com.zcl.hxqh.zhongchuliang.R;
+import com.zcl.hxqh.zhongchuliang.view.fragment.CheckFragment;
 import com.zcl.hxqh.zhongchuliang.view.fragment.InFragment;
+import com.zcl.hxqh.zhongchuliang.view.fragment.OutFragment;
+import com.zcl.hxqh.zhongchuliang.view.fragment.TransferFragment;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,13 +28,17 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private ImageView img_right;
     private Fragment[] fragments;
     public InFragment infragment;
-    public InFragment outfragment;
-    public InFragment checkfragment;
-    public InFragment transferfragment;
+    public OutFragment outfragment;
+    public CheckFragment checkfragment;
+    public TransferFragment transferfragment;
     private ImageView[] imagebuttons;
     private TextView[] textviews;
-    private String connectMsg = "";
-    ;
+
+    /**
+     * 搜索按钮*
+     */
+    private ImageView searchButton;
+
     private int index;
     private int currentTabIndex;// 当前fragment的index
 
@@ -41,14 +49,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         findViewById();
         initViews();
         initTabView();
-        setOnListener();
     }
 
     private void initTabView() {
         infragment = new InFragment();
-        outfragment = new InFragment();
-        checkfragment = new InFragment();
-        transferfragment = new InFragment();
+        outfragment = new OutFragment();
+        checkfragment = new CheckFragment();
+        transferfragment = new TransferFragment();
         fragments = new Fragment[]{infragment, outfragment,
                 checkfragment, transferfragment};
         imagebuttons = new ImageView[4];
@@ -127,14 +134,19 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
     private void findViewById() {
         txt_title = (TextView) findViewById(R.id.txt_title);
+        searchButton = (ImageView) findViewById(R.id.img_right);
     }
 
     private void initViews() {
+        searchButton.setOnClickListener(searchButtonOnClickListener);
     }
 
-    private void setOnListener() {
-
-    }
+    private View.OnClickListener searchButtonOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            setSearchButton(currentTabIndex);
+        }
+    };
 
     private int keyBackClickCount = 0;
 
@@ -171,5 +183,34 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         }
     }
 
+
+    /**
+     * 跳转至搜索界面*
+     */
+    private void setSearchButton(int mark) {
+
+        if (mark == 0) { //跳转至入库
+            Intent intent = new Intent();
+            intent.putExtra("search_mark", mark);
+            intent.setClass(MainActivity.this, SearchActivity.class);
+            startActivityForResult(intent, 0);
+        } else if (mark == 1) { //出库
+            Intent intent = new Intent();
+            intent.putExtra("search_mark", mark);
+            intent.setClass(MainActivity.this, SearchActivity.class);
+            startActivityForResult(intent, 0);
+        } else if (mark == 2) { //盘点
+            Intent intent = new Intent();
+            intent.putExtra("search_mark", mark);
+            intent.setClass(MainActivity.this, SearchActivity.class);
+            startActivityForResult(intent, 0);
+        } else if (mark == 3) { //转移
+            Intent intent = new Intent();
+            intent.putExtra("search_mark", mark);
+            intent.setClass(MainActivity.this, SearchActivity.class);
+            startActivityForResult(intent, 0);
+        }
+
+    }
 
 }

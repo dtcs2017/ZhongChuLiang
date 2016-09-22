@@ -11,22 +11,22 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.zcl.hxqh.zhongchuliang.R;
-import com.zcl.hxqh.zhongchuliang.adapter.PoAdapter;
+import com.zcl.hxqh.zhongchuliang.adapter.LocationsAdapter;
 import com.zcl.hxqh.zhongchuliang.api.HttpRequestHandler;
 import com.zcl.hxqh.zhongchuliang.api.ImManager;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.Ig_Json_Model;
 import com.zcl.hxqh.zhongchuliang.bean.Results;
-import com.zcl.hxqh.zhongchuliang.model.Po;
+import com.zcl.hxqh.zhongchuliang.model.Locations;
 import com.zcl.hxqh.zhongchuliang.view.widght.SwipeRefreshLayout;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * 入库管理列表*
+ * 库存转移列表*
  */
-public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnLoadListener{
-    private static final String TAG = "InFragment";
+public class TransferFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnLoadListener{
+    private static final String TAG = "LocationFragment";
     private static final int RESULT_ADD_TOPIC = 100;
     /**
      * RecyclerView*
@@ -37,15 +37,17 @@ public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
 
     SwipeRefreshLayout mSwipeLayout;
 
-    private int page = 1;
 
     /**
      * 暂无数据*
      */
     LinearLayout notLinearLayout;
 
-    PoAdapter poAdapter;
+    LocationsAdapter locationsAdapter;
 
+    private int page = 1;
+
+    private static final int mark=0; //库存转移标识
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,8 +73,8 @@ public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
         mRecyclerView = (RecyclerView) view.findViewById(R.id.list_topics);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        poAdapter = new PoAdapter(getActivity());
-        mRecyclerView.setAdapter(poAdapter);
+        locationsAdapter = new LocationsAdapter(getActivity(),mark);
+        mRecyclerView.setAdapter(locationsAdapter);
         mSwipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
         mSwipeLayout.setColor(R.color.holo_blue_bright,
                 R.color.holo_green_light,
@@ -92,17 +94,17 @@ public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
         super.onActivityCreated(savedInstanceState);
         Bundle args = getArguments();
         mSwipeLayout.setRefreshing(true);
-        getPoList();
+        getItemList();
     }
 
 
 
     /**
-     * 获取入库管理*
+     * 获取库存转移位置信息*
      */
 
-    private void getPoList() {
-        ImManager.getDataPagingInfo(getActivity(), ImManager.setPoUrl("",page, 20), new HttpRequestHandler<Results>() {
+    private void getItemList() {
+        ImManager.getDataPagingInfo(getActivity(), ImManager.serLocationsUrl("",page, 20), new HttpRequestHandler<Results>() {
             @Override
             public void onSuccess(Results results) {
                 Log.i(TAG, "data=" + results);
@@ -110,25 +112,27 @@ public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
 
             @Override
             public void onSuccess(Results results, int totalPages, int currentPage) {
-                ArrayList<Po> items = null;
+                ArrayList<Locations> items = null;
                 try {
-                    items = Ig_Json_Model.parsePoFromString(results.getResultlist());
+                    items = Ig_Json_Model.parseLocationsFromString(results.getResultlist());
                     mSwipeLayout.setRefreshing(false);
                     mSwipeLayout.setLoading(false);
                     if (items == null || items.isEmpty()) {
                         notLinearLayout.setVisibility(View.VISIBLE);
-                    } else{
-                        if(page == 1){
-                            poAdapter = new PoAdapter(getActivity());
-                            mRecyclerView.setAdapter(poAdapter);
+                    } else {
+                        if (page == 1) {
+                            locationsAdapter = new LocationsAdapter(getActivity(),mark);
+                            mRecyclerView.setAdapter(locationsAdapter);
                         }
-                        if(page == totalPages) {
-                            poAdapter.adddate(items);
+                        if (totalPages == page) {
+                            locationsAdapter.adddate(items);
                         }
                     }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
             }
 
             @Override
@@ -143,14 +147,13 @@ public class InFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
     @Override
     public void onRefresh() {
         page = 1;
-        getPoList();
+        getItemList();
     }
 
     //上拉加载
     @Override
     public void onLoad() {
         page++;
-        getPoList();
+        getItemList();
     }
-
 }

@@ -37,7 +37,7 @@
                     android:background="@color/white"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_in_uncheck" />
+                    android:src="@drawable/tab_in" />
 
                 <TextView
                     android:id="@+id/tv_in"
@@ -76,7 +76,7 @@
                     android:background="@color/white"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_out_uncheck" />
+                    android:src="@drawable/tab_out" />
 
                 <TextView
                     android:id="@+id/tv_out"
@@ -115,7 +115,7 @@
                     android:background="@color/white"
                     android:focusable="false"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_check_uncheck" />
+                    android:src="@drawable/tab_check" />
 
                 <TextView
                     android:id="@+id/tv_check"
@@ -148,7 +148,7 @@
                 android:background="@color/white"
                 android:focusable="false"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_transfer_uncheck" />
+                android:src="@drawable/tab_transfer" />
 
             <TextView
                 android:id="@+id/tv_transfer"

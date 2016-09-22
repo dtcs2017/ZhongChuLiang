@@ -8,4 +8,5 @@
     <dimen name="dimen_5">5dp</dimen>
     <dimen name="dimen_10">10dp</dimen>
     <dimen name="dimens_12">12sp</dimen>
+    <dimen name="actionbar_dimen">56dp</dimen>
 </resources>

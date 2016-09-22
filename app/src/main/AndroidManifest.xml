@@ -45,6 +45,12 @@
         <activity
             android:name=".view.activity.MainActivity"
             android:label="MainActivity"></activity>
+        <activity
+            android:name=".view.activity.SearchActivity"
+            android:label="SearchActivity"></activity>
+        <activity
+            android:name=".view.activity.MipcaActivityCapture"
+            android:label="MipcaActivityCapture"></activity>
     </application>
 
 </manifest>

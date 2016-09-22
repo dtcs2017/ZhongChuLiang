@@ -33,7 +33,27 @@
     <string name="login_successful_hint">登陆成功</string>
     <string name="get_data_info_fail">获取信息失败</string>
     <string name="have_not_data_txt">暂无相关数据</string>
+    <string name="loading_data_fail">加载数据失败...</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- 列表 -->
+    <string name="item_num_title">编号:</string>
+    <string name="item_desc_title">描述:</string>
+    <!--hint-->
+    <string name="hint_item_num_title">暂无编号</string>
+    <string name="hint_item_desc_title">暂无描述</string>
+
+    <!--库存转移-->
+    <string name="title_activity_locations_detail">库房</string>
+    <string name="locations_location_title">位置:</string>
+    <string name="location_sited_text">地点:</string>
+    <string name="locations_removed_btn">移出</string>
+    <string name="locations_move_btn">移入</string>
+    <string name="locations_title_text">库房详情</string>
+    <string name="location_zhuangyi">转移</string>
+    <string name="location_zhuangyi_matrectrans">转移详情</string>
+
+    <!-- 二微码扫描 -->
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="scanning_text">条码/二维码</string>
+
 </resources>
