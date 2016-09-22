@@ -16,4 +16,9 @@
     <color name="blue_1">#2da861</color>
 
     <color name="gray">#9A9A9A</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <color name="transparent2">#50000000</color>
+    <color name="text_color">#ffffff00</color>
 </resources>
