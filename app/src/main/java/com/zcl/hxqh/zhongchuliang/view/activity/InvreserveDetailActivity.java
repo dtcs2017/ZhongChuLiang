@@ -127,11 +127,11 @@ public class InvreserveDetailActivity extends BaseActivity {
     private View.OnClickListener chooseImageViewOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-//            Intent intent = new Intent(InvreserveDetailActivity.this, BinChooseActivity.class);
-//            intent.putExtra("location", invreserve.getLocation());
-//            intent.putExtra("itemnum", invreserve.getItemnum());
-//            intent.putExtra("requestCode", 3);
-//            startActivityForResult(intent, 3);
+            Intent intent = new Intent(InvreserveDetailActivity.this, BinChooseActivity.class);
+            intent.putExtra("location", invreserve.getLocation());
+            intent.putExtra("itemnum", invreserve.getItemnum());
+            intent.putExtra("requestCode", 3);
+            startActivityForResult(intent, 3);
         }
     };
 

@@ -51,17 +51,17 @@ public class ImManager {
 
 
 
-//    /**
-//     * 设置库存余量接口*
-//     */
-//    public static String sercInvbalancesUrl(String loaction, String search, int curpage, int showcount) {
-//        if(search.equals("")){
-//            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "'}}";
-//        }else{
-//            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "','LOTNUM':'"+search+"'}}";
-//        }
-//
-//    }
+    /**
+     * 设置库存余量接口*
+     */
+    public static String sercInvbalancesUrl(String loaction, String search, int curpage, int showcount) {
+        if(search.equals("")){
+            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "'}}";
+        }else{
+            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "','LOTNUM':'"+search+"'}}";
+        }
+
+    }
 
     /**
      * 设置入库管理*
@@ -113,23 +113,23 @@ public class ImManager {
         }
     }
 
-//    /**
-//     * 设置库存转移接口*
-//     */
-//    public static String serInvbalancesUrl(String location, String search, int curpage, int showcount) {
-//        if (search.equals("")) {
-//            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0'}}";
-//        }else{
-//            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0"+"','ITEMNUM':'" + search + "'}}";
-//        }
-//    }
-//    /**
-//     * 设置库存仓库库位接口*
-//     */
-//    public static String serFrombinUrl(String location, String itemnum, int curpage, int showcount) {
-//            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','ITEMNUM':'"+itemnum+"'}}";
-//
-//    }
+    /**
+     * 设置库存转移接口*
+     */
+    public static String serInvbalancesUrl(String location, String search, int curpage, int showcount) {
+        if (search.equals("")) {
+            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0'}}";
+        }else{
+            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0"+"','ITEMNUM':'" + search + "'}}";
+        }
+    }
+    /**
+     * 设置库存仓库库位接口*
+     */
+    public static String serFrombinUrl(String location, String itemnum, int curpage, int showcount) {
+            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','ITEMNUM':'"+itemnum+"'}}";
+
+    }
 
 
 

@@ -69,6 +69,7 @@
 
     <string name="material_receiving">物料接收</string>
     <string name="input_all">全部提交</string>
+    <string name="confirm_text">确认</string>
 
     <string name="submit_process_ing">正在提交</string>
 
@@ -113,4 +114,45 @@
     <string name="invbalances_invtype_title">库存类别:</string>
     <string name="inbalance_itemnum_title">物资编号:</string>
     <string name="cinvbalances_detail_title">余量详情</string>
+
+    <!--库存项目-->
+    <string name="title_activity_invbalances_list">库存项目</string>
+    <string name="item_num_text">项目编号:</string>
+    <string name="invbalances_itemnum_text">项目:</string>
+
+
+    <!--库存项目详情-->
+    <string name="invbalance_itemnum_title">项目:</string>
+    <string name="invbalance_in20_title">规格型号:</string>
+    <string name="invbalance_orderunit_title">订购单位:</string>
+    <string name="invbalance_curbal_title">当前余量:</string>
+    <string name="invbalance_location_title">库房:</string>
+    <string name="invbalance_siteid_title">地点:</string>
+    <string name="invbalance_binnum_title">货柜:</string>
+
+    <!--库存转移详情页面-->
+    <string name="matrectrans_itemnum">项目:</string>
+    <string name="matrectrans_description">描述:</string>
+    <string name="matrectrans_type">型号:</string>
+    <string name="matrectrans_receiptquantity">数量:</string>
+    <string name="matrectrans_curbaltotal">当前余量:</string>
+    <string name="matrectrans_linecost">行成本:</string>
+    <string name="matrectrans_frombin">原库位号:</string>
+    <string name="matrectrans_fromstoreloc">原仓库:</string>
+    <string name="matrectrans_tostoreloc_title">目标仓库</string>
+    <string name="matrectrans_tostoreloc">目标仓库:</string>
+    <string name="matrectrans_tobin">目标库位号:</string>
+    <string name="matrectrans_details">转移详情</string>
+
+
+    <!--仓库库位号选择页面-->
+    <string name="title_activity_bin">库位号</string>
+    <string name="bin_from">原库位号</string>
+    <string name="bin_to">目标库位号</string>
+    <string name="bin_batch">批次:</string>
+    <string name="bin_curbaltotal">当前余量:</string>
+    <string name="bin_item">货柜:</string>
+
+    <string name="search">查询</string>
+    <string name="search_result">查询结果</string>
 </resources>

@@ -135,6 +135,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     private void findViewById() {
         txt_title = (TextView) findViewById(R.id.txt_title);
         searchButton = (ImageView) findViewById(R.id.img_right);
+        searchButton.setVisibility(View.VISIBLE);
     }
 
     private void initViews() {

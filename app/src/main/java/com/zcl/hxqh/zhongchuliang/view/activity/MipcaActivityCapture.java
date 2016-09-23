@@ -131,7 +131,7 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
             bundle.putInt("mark",mark);
             Log.i("MipcaActivityCapture", "resultString=" + resultString);
             resultIntent.putExtras(bundle);
-//            resultIntent.setClass(MipcaActivityCapture.this, Results_Activity.class);
+            resultIntent.setClass(MipcaActivityCapture.this, Results_Activity.class);
             this.setResult(RESULT_OK, resultIntent);
             startActivityForResult(resultIntent,RESULT_OK);
         }

@@ -3,12 +3,14 @@
 package com.zcl.hxqh.zhongchuliang.api.ig_json;
 
 
+import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Invbalances_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Inventory_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Invreserve_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Locations_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Po_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.Poline_JsonHelper;
 import com.zcl.hxqh.zhongchuliang.api.ig_json.impl.WorkOrder_JsonHelper;
+import com.zcl.hxqh.zhongchuliang.model.Invbalances;
 import com.zcl.hxqh.zhongchuliang.model.Inventory;
 import com.zcl.hxqh.zhongchuliang.model.Invreserve;
 import com.zcl.hxqh.zhongchuliang.model.Locations;
@@ -77,12 +79,12 @@ public class Ig_Json_Model {
     public static ArrayList<Locations> parseLocationsFromString(String input) throws IOException {
         return Locations_JsonHelper.parseFromJsonList(input);
     }
-//    /**
-//     * 解析库存项目
-//     */
-//    public static ArrayList<Invbalances> parseInvbalancesFromString(String input) throws IOException {
-//        return Invbalances_JsonHelper.parseFromJsonList(input);
-//    }
+    /**
+     * 解析库存盘点
+     */
+    public static ArrayList<Invbalances> parseInvbalancesFromString(String input) throws IOException {
+        return Invbalances_JsonHelper.parseFromJsonList(input);
+    }
 
 
 

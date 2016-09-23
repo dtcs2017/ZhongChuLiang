@@ -1,6 +1,5 @@
 package com.zcl.hxqh.zhongchuliang.adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -12,24 +11,23 @@ import android.widget.TextView;
 
 import com.zcl.hxqh.zhongchuliang.R;
 import com.zcl.hxqh.zhongchuliang.model.Locations;
-import com.zcl.hxqh.zhongchuliang.view.activity.LocationsDetailActivity;
+import com.zcl.hxqh.zhongchuliang.view.activity.MatrectransActivity;
+import com.zcl.hxqh.zhongchuliang.view.activity.StorelocChooseActivity;
 
 import java.util.ArrayList;
 
 /**
  * Created by apple on 15/6/4.
- * 库存转移
+ * 仓库选择
  */
-public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.ViewHolder> {
+public class StorelocChooseAdapter extends RecyclerView.Adapter<StorelocChooseAdapter.ViewHolder> {
 
     private static final String TAG = "LocationsAdapter";
-    Context mContext;
+    StorelocChooseActivity activity;
     ArrayList<Locations> mItems = new ArrayList<Locations>();
-    int mark = 0; //库房标识
 
-    public LocationsAdapter(Context context, int mark) {
-        mContext = context;
-        this.mark = mark;
+    public StorelocChooseAdapter(StorelocChooseActivity activity) {
+        this.activity = activity;
     }
 
     @Override
@@ -41,20 +39,20 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         final Locations item = mItems.get(i);
-        viewHolder.itemNumTitle.setText(mContext.getString(R.string.locations_location_title));
-        viewHolder.itemDescTitle.setText(mContext.getString(R.string.item_desc_title));
+        viewHolder.itemNumTitle.setText(activity.getString(R.string.locations_location_title));
+        viewHolder.itemDescTitle.setText(activity.getString(R.string.item_desc_title));
         viewHolder.itemNum.setText(item.location);
         viewHolder.itemDesc.setText(item.description);
 
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(mContext, LocationsDetailActivity.class);
+                Intent intent = new Intent(activity, MatrectransActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("locations", item);
+                bundle.putSerializable("locations", item.location);
                 intent.putExtras(bundle);
-                mContext.startActivity(intent);
+                activity.setResult(2, intent);
+                activity.finish();
             }
         });
 
@@ -86,10 +84,10 @@ public class LocationsAdapter extends RecyclerView.Adapter<LocationsAdapter.View
         notifyDataSetChanged();
     }
 
-    public void adddate(ArrayList<Locations> data) {
-        if (data.size() > 0) {
-            for (int i = 0; i < data.size(); i++) {
-                if (!mItems.contains(data.get(i))) {
+    public void adddate(ArrayList<Locations> data){
+        if(data.size()>0){
+            for(int i = 0;i < data.size();i++){
+                if(!mItems.contains(data.get(i))){
                     mItems.add(data.get(i));
                 }
             }

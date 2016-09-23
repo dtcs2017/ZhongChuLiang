@@ -1,6 +1,8 @@
 package com.zcl.hxqh.zhongchuliang.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import com.zcl.hxqh.zhongchuliang.R;
 import com.zcl.hxqh.zhongchuliang.model.Inventory;
+import com.zcl.hxqh.zhongchuliang.view.activity.CInvbalancesActivity;
 
 import java.util.ArrayList;
 
@@ -25,9 +28,10 @@ public class InvAdapter extends RecyclerView.Adapter<InvAdapter.ViewHolder> {
     ArrayList<Inventory> mInventorys = new ArrayList<Inventory>();
 
     private int mark; //库存情况/库存盘点
+
     public InvAdapter(Context context, int mark) {
         mContext = context;
-        this.mark=mark;
+        this.mark = mark;
     }
 
     @Override
@@ -47,18 +51,12 @@ public class InvAdapter extends RecyclerView.Adapter<InvAdapter.ViewHolder> {
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent();
-//                if(mark==1){
-//                    intent.setClass(mContext, InvDetailsActivity.class);
-//                }else{
-//                    intent.setClass(mContext, CInvbalancesActivity.class);
-//                }
-//
-//
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("inventory", inv);
-//                intent.putExtras(bundle);
-//                mContext.startActivity(intent);
+                Intent intent = new Intent();
+                intent.setClass(mContext, CInvbalancesActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("inventory", inv);
+                intent.putExtras(bundle);
+                mContext.startActivity(intent);
             }
         });
 
@@ -91,10 +89,10 @@ public class InvAdapter extends RecyclerView.Adapter<InvAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void adddate(ArrayList<Inventory> data){
-        if(data.size()>0){
-            for(int i = 0;i < data.size();i++){
-                if(!mInventorys.contains(data.get(i))){
+    public void adddate(ArrayList<Inventory> data) {
+        if (data.size() > 0) {
+            for (int i = 0; i < data.size(); i++) {
+                if (!mInventorys.contains(data.get(i))) {
                     mInventorys.add(data.get(i));
                 }
             }

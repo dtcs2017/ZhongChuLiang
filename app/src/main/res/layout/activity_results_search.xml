@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include
+        android:id="@+id/title_contains"
+        layout="@layout/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <include layout="@layout/fragment_item"></include>
+</LinearLayout>

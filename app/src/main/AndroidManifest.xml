@@ -66,6 +66,39 @@
         <activity
             android:name=".view.activity.InvreserveDetailActivity"
             android:label="InvreserveDetailActivity"></activity>
+        <activity
+            android:name=".view.activity.CInvbalancesActivity"
+            android:label="CInvbalancesActivity"></activity>
+        <activity
+            android:name=".view.activity.CInvbalancesDetailActivity"
+            android:label="CInvbalancesDetailActivity"></activity>
+        <activity
+            android:name=".view.activity.LocationsDetailActivity"
+            android:label="LocationsDetailActivity"></activity>
+        <activity
+            android:name=".view.activity.InvbalancesActivity"
+            android:label="InvbalancesActivity"></activity>
+        <activity
+            android:name=".view.activity.InvbalancesListActivity"
+            android:label="InvbalancesListActivity"></activity>
+        <activity
+            android:name=".view.activity.InvbalanceDetailActivity"
+            android:label="InvbalanceDetailActivity"></activity>
+        <activity
+            android:name=".view.activity.MatrectransActivity"
+            android:label="MatrectransActivity"></activity>
+        <activity
+            android:name=".view.activity.BinChooseActivity"
+            android:label="BinChooseActivity"></activity>
+        <activity
+            android:name=".view.activity.StorelocChooseActivity"
+            android:label="StorelocChooseActivity"></activity>
+        <activity
+            android:name=".view.activity.Results_Activity"
+            android:label="Results_Activity"></activity>
+        <activity
+            android:name=".view.activity.Results_searchActivity"
+            android:label="Results_searchActivity"></activity>
     </application>
 
 </manifest>
