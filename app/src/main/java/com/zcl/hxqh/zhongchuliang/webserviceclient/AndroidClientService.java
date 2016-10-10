@@ -211,7 +211,6 @@ public class AndroidClientService {
      * 库存移出
      */
     public String INV05Invtrans1(String userid, String itemnum, String qty, String storeroom1, String binnum1, String lotnum1, String storeroom2, String binnum2, String lotnum2) {
-        Log.i(TAG,"userid="+userid+",itemnum="+itemnum+",qty="+qty+",storeroom1="+storeroom1+",binnum1="+binnum1+",lotnum1="+lotnum1+",storeroom2="+storeroom2+",binnum2="+binnum2+",lotnum2="+lotnum2);
 
         SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         soapEnvelope.implicitTypes = true;

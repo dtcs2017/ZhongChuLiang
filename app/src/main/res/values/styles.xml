@@ -8,13 +8,11 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- 标题1样式 -->
     <style name="txt_titleStyle1">
@@ -22,6 +20,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Permissions">
+        <item name="android:windowBackground">@color/blue_1</item>
+
     </style>
 
 </resources>

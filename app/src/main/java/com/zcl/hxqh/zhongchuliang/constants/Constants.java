@@ -11,21 +11,19 @@ public class Constants {
     /**
      * 基础接口*
      */
-    public static final String HTTP_API_URL = "http://182.92.8.94:7002/maximo/mobile/";
-//    public static final String HTTP_API_URL = "http://10.192.170.23:7004/maximo/mobile/";
+    //汕尾接口
+//    public static final String HTTP_API_URL = "http://182.92.8.94:7002/maximo/mobile/";
+    //大连接口
+    public static final String HTTP_API_URL = "http://10.19.3.155/maximo/mobile/";
 
-    /**
-     * 本地接口*
-     */
-//    public static final String HTTP_API_URL = "http://192.168.1.125:7008/maximo/mobile/";
 
     //登陆URL
     public static final String SIGN_IN_URL = HTTP_API_URL + "system/login";
 
     //webservice上传接口
     //远程
-    public static final String webserviceURL = "http://182.92.8.94:7002/meaweb/services/MOBILESERVICE";
-//    public static final String webserviceURL = "http://10.192.170.23:7004/meaweb/services/MOBILESERVICE";
+//    public static final String webserviceURL = "http://182.92.8.94:7002/meaweb/services/MOBILESERVICE";
+    public static final String webserviceURL = "http://10.19.3.155/meaweb/services/MOBILESERVICE";
     //本地
 //    public static final String webserviceURL = "http://182.92.8.94:7002/meaweb/wsdl/MOBILESERVICE.wsdl";
 

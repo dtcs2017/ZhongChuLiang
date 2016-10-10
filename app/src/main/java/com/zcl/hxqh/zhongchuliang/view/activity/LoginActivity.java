@@ -10,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.tencent.bugly.Bugly;
 import com.zcl.hxqh.zhongchuliang.AppManager;
 import com.zcl.hxqh.zhongchuliang.R;
 import com.zcl.hxqh.zhongchuliang.api.HttpRequestHandler;
@@ -37,15 +38,23 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     protected FlippingLoadingDialog mLoadingDialog;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Bugly.init(getApplicationContext(), "a8d607bea9", true);
+
         imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
                 .getDeviceId();
         findViewById();
         initView();
         setEvent();
+
+
     }
 
 
@@ -179,6 +188,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             mLoadingDialog = new FlippingLoadingDialog(this, msg);
         return mLoadingDialog;
     }
+
+
 
 
 }
