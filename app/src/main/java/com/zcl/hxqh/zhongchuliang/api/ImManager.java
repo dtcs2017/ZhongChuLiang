@@ -10,6 +10,7 @@ import com.loopj.android.http.TextHttpResponseHandler;
 import com.zcl.hxqh.zhongchuliang.R;
 import com.zcl.hxqh.zhongchuliang.bean.Results;
 import com.zcl.hxqh.zhongchuliang.constants.Constants;
+import com.zcl.hxqh.zhongchuliang.until.AccountUtils;
 
 
 /**
@@ -17,48 +18,44 @@ import com.zcl.hxqh.zhongchuliang.constants.Constants;
  */
 public class ImManager {
 
-//    private static Application mApp = Application.getInstance();
+    //    private static Application mApp = Application.getInstance();
     private static AsyncHttpClient sClient = null;
     private static final String TAG = "ImManager";
 
 
-
-
-    /**出库管理**/
+    /**
+     * 出库管理
+     **/
     public static String serWorkorderUrl(String search, int curpage, int showcount) {
-        if(search.equals("")){
-            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.WORKORDER_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read'}";
-        }else{
-            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.WORKORDER_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + search + "'}}";
+        if (search.equals("")) {
+            return "{'appid':'" + Constants.WORKORDER_APPID + "','objectname':'" + Constants.WORKORDER_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read'}";
+        } else {
+            return "{'appid':'" + Constants.WORKORDER_APPID + "','objectname':'" + Constants.WORKORDER_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + search + "'}}";
         }
 
     }
 
-    /**出库管理**/
+    /**
+     * 出库管理
+     **/
     public static String serInvreserveUrl(String wonum, String search, int curpage, int showcount) {
-        if(search.equals("")){
-            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum + "'}}";
-        }else{
-            return "{'appid':'"+Constants.WORKORDER_APPID+"','objectname':'"+Constants.INVRESERVE_NAME +"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum +  "','ITEMNUM':'"+search+"'}}";
+        if (search.equals("")) {
+            return "{'appid':'" + Constants.WORKORDER_APPID + "','objectname':'" + Constants.INVRESERVE_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum + "'}}";
+        } else {
+            return "{'appid':'" + Constants.WORKORDER_APPID + "','objectname':'" + Constants.INVRESERVE_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'WONUM':'" + wonum + "','ITEMNUM':'" + search + "'}}";
         }
 
     }
-
-
-
-
-
-
 
 
     /**
      * 设置库存余量接口*
      */
     public static String sercInvbalancesUrl(String loaction, String search, int curpage, int showcount) {
-        if(search.equals("")){
-            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "'}}";
-        }else{
-            return "{'appid':'"+Constants.INVBALANCES_APPID+"','objectname':'"+Constants.INVBALANCESS_NAME+"','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "','LOTNUM':'"+search+"'}}";
+        if (search.equals("")) {
+            return "{'appid':'" + Constants.INVBALANCES_APPID + "','objectname':'" + Constants.INVBALANCESS_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "'}}";
+        } else {
+            return "{'appid':'" + Constants.INVBALANCES_APPID + "','objectname':'" + Constants.INVBALANCESS_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + loaction + "','LOTNUM':'" + search + "'}}";
         }
 
     }
@@ -69,10 +66,11 @@ public class ImManager {
     public static String setPoUrl(String search, int curpage, int showcount) {
         if (search.equals("")) {
             return "{'appid':'" + Constants.RECEIPT_APPID + "','objectname':'" + Constants.PO_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read'}";
-        }else {
+        } else {
             return "{'appid':'" + Constants.RECEIPT_APPID + "','objectname':'" + Constants.PO_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'PONUM':'" + search + "'}}";
         }
     }
+
     /**
      * 设置入库物料管理*
      */
@@ -90,16 +88,15 @@ public class ImManager {
     /**
      * 设置库存使用情况接口*
      */
-    public static String serInventoryUrl(String search,int curpage, int showcount) {
+    public static String serInventoryUrl(String search, int curpage, int showcount) {
 
         if (search.equals("")) {
             return "{'appid':'" + Constants.INV_APPID + "','objectname':'" + Constants.INVENTORY_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read'}";
-        }else {
+        } else {
             return "{'appid':'" + Constants.INV_APPID + "','objectname':'" + Constants.INVENTORY_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'ITEMNUM':'" + search + "'}}";
         }
 
     }
-
 
 
     /**
@@ -108,8 +105,8 @@ public class ImManager {
     public static String serLocationsUrl(String search, int curpage, int showcount) {
         if (search.equals("")) {
             return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.LOCATIONS_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'TYPE':'STOREROOM'}}";
-        }else{
-            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.LOCATIONS_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'TYPE':'STOREROOM','LOCATION':'"+search+"'}}";
+        } else {
+            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.LOCATIONS_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'TYPE':'STOREROOM','LOCATION':'" + search + "'}}";
         }
     }
 
@@ -119,25 +116,23 @@ public class ImManager {
     public static String serInvbalancesUrl(String location, String search, int curpage, int showcount) {
         if (search.equals("")) {
             return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0'}}";
-        }else{
-            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0"+"','ITEMNUM':'" + search + "'}}";
+        } else {
+            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','CURBAL':'>0" + "','ITEMNUM':'" + search + "'}}";
         }
     }
+
     /**
      * 设置库存仓库库位接口*
      */
     public static String serFrombinUrl(String location, String itemnum, int curpage, int showcount) {
-            return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','ITEMNUM':'"+itemnum+"'}}";
+        return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','curpage':" + curpage + ",'showcount':" + showcount + ",'option':'read','condition':{'LOCATION':'" + location + "','ITEMNUM':'" + itemnum + "'}}";
 
     }
-
 
 
 //    public static String getInvbalances(){
 //        return "{'appid':'" + Constants.LOCATIONS_APPID + "','objectname':'" + Constants.INVBALANCES_NAME + "','option':'read'}";
 //    }
-
-
 
 
     /**
@@ -151,14 +146,14 @@ public class ImManager {
      */
     public static void loginWithUsername(final Context cxt, final String username, final String password, String imei,
                                          final HttpRequestHandler<String> handler) {
-
-
+        String ip_adress = AccountUtils.getIpAddress(cxt) + Constants.SIGN_IN_URL;
+        Log.i(TAG, "ip_adress=" + ip_adress);
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("loginid", username);
         params.put("password", password);
         params.put("imei", imei);
-        client.post(Constants.SIGN_IN_URL, params, new TextHttpResponseHandler() {
+        client.post(ip_adress, params, new TextHttpResponseHandler() {
 
 
             @Override
@@ -188,7 +183,7 @@ public class ImManager {
      * 不分页获取信息方法*
      */
     public static void getData(final Context cxt, String data, final HttpRequestHandler<Results> handler) {
-        Log.i(TAG,"data="+data);
+        Log.i(TAG, "data=" + data);
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("data", data);
@@ -214,11 +209,13 @@ public class ImManager {
      * 解析返回的结果--分页*
      */
     public static void getDataPagingInfo(final Context cxt, String data, final HttpRequestHandler<Results> handler) {
-        Log.i(TAG,"data="+data);
+        Log.i(TAG, "data=" + data);
+        String ip_adress = AccountUtils.getIpAddress(cxt) + Constants.BASE_URL;
+        Log.i(TAG,"ip_adress="+ip_adress);
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("data", data);
-        client.get(Constants.BASE_URL, params, new TextHttpResponseHandler() {
+        client.get(ip_adress, params, new TextHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString, Throwable throwable) {
                 SafeHandler.onFailure(handler, cxt.getString(R.string.get_data_info_fail));

@@ -85,9 +85,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         switch (view.getId()) {
             case R.id.re_in:
                 index = 0;
-                if (infragment != null) {
-//                    infragment.refresh();
-                }
+
                 txt_title.setText(R.string.in_storage_text);
 
                 break;
@@ -139,6 +137,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     }
 
     private void initViews() {
+        txt_title.setText(R.string.in_storage_text);
         searchButton.setOnClickListener(searchButtonOnClickListener);
     }
 

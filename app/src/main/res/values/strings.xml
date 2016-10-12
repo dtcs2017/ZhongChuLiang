@@ -15,6 +15,7 @@
     <string name="logined_member_username">logined_member_username</string>
     <string name="logined_member_password">logined_member_password</string>
     <string name="logined_member_ischeck">logined_member_ischeck</string>
+    <string name="ip_address">ip_address</string>
 
     <string name="login_error_empty_user">用户名不能为空</string>
     <string name="login_error_empty_passwd">密码不能为空</string>

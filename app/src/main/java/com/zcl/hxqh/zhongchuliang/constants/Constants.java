@@ -11,40 +11,38 @@ public class Constants {
     /**
      * 基础接口*
      */
-    //汕尾接口
-//    public static final String HTTP_API_URL = "http://182.92.8.94:7002/maximo/mobile/";
-    //大连接口
-    public static final String HTTP_API_URL = "http://10.19.3.155/maximo/mobile/";
 
+    /**
+     * 默认 外网*
+     */
+    public static final String HTTP_API_IP = "http://218.25.141.113";
+    /**
+     * 内网*
+     */
+    public static final String HTTPZHENGSHI_API_IP = "http://10.19.3.155";
 
     //登陆URL
-    public static final String SIGN_IN_URL = HTTP_API_URL + "system/login";
+    public static final String SIGN_IN_URL ="/maximo/mobile/system/login";
 
     //webservice上传接口
-    //远程
-//    public static final String webserviceURL = "http://182.92.8.94:7002/meaweb/services/MOBILESERVICE";
-    public static final String webserviceURL = "http://10.19.3.155/meaweb/services/MOBILESERVICE";
-    //本地
-//    public static final String webserviceURL = "http://182.92.8.94:7002/meaweb/wsdl/MOBILESERVICE.wsdl";
+    public static final String webserviceURL = "/meaweb/services/MOBILESERVICE";
 
     public static String getWsUrl(Context context) {
         return webserviceURL;
     }
 
     //通用接口查询
-    public static final String BASE_URL = HTTP_API_URL + "common/api";
+    public static final String BASE_URL =  "/maximo/mobile/common/api";
 
-    //主项目详情修改
-    public static final String ITEM_UPDATE_URL = HTTP_API_URL + "item/update";
 
 
     //生成物资编码接口
-    public static final String ITEM_GENERATE_URL = HTTP_API_URL + "itemreq/createCode";
+    public static final String ITEM_GENERATE_URL ="/maximo/mobile/itemreq/createCode";
     //发送工作流接口
 
-    public static final String START_FLOW_URL = HTTP_API_URL + "wf/start";
+    public static final String START_FLOW_URL = "/maximo/mobile/wf/start";
     //审批工作流接口
-    public static final String APPROVAL_FLOW_URL = HTTP_API_URL + "wf/approve";
+    public static final String APPROVAL_FLOW_URL ="/maximo/mobile/wf/approve";
 
     /**
      * ------------------数据库表名配置－－开始*
